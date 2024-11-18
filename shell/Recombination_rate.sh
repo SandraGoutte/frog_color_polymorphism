@@ -66,7 +66,7 @@ vcftools --vcf /scratch/sg5533/NEW_GENOME_ANALYSES/ROBEENSIS_GENOME/HIGHCOV/high
 ./LDhat/lkgen -lk lk_n50_t0.001.txt -seq sites.txt
 
 #####################################################################
-### 3. Run LDhat on each fragment
+### 4. Run LDhat on each fragment
 #####################################################################
 ## run the LDhat interval function on all chromosomes
 sbatch run_interval_all_chr.sh
@@ -80,6 +80,9 @@ sbatch run_stat_interval_chr7-8.sh
 sbatch run_stat_interval_chr9-10.sh
 sbatch run_stat_interval_chr11-12.sh
 
+#####################################################################
+### 5. Join all the results for plotting in R
+#####################################################################
 ## the res.text file outputted by Stats is a value of rho per SNPs. We need to make a correspondence between the SNP position (given in the .locs file, in kb) and the rho in the res file.
 sbatch joint_rho_SNPposition_all_chr.sh
 
@@ -89,7 +92,7 @@ sbatch remove_2_first_lines.sh
 ## our files overlap 1000 bp in total, but that’s different numbers of lines for each file, depending on the density of SNPs. So we need to remove 500 bp on each side of each file (except the first and last) and multiply the position by 1000 to have bp instead of kb
 sbatch trim_result.sh
 
-### row bind all the tables to have a single file for each chr
+## row bind all the tables to have a single file for each chr
 sbatch cat_all_results_one_file.sh
-## all end up in the first file chr11_highcov_1.joint.txt
-## download and rename chr11_highcov_1-127.joint.txt and plot in R 
+# all end up in the first file chr11_highcov_1.joint.txt
+# download and rename chr11_highcov_1-127.joint.txt and plot in R 
