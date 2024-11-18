@@ -24,7 +24,7 @@ math() {
 chroms=('Scaffold_2__2_contigs__length_236349107' 'Scaffold_1__1_contigs__length_194224858' 'Scaffold_5__2_contigs__length_177367226' 'Scaffold_3__2_contigs__length_170906183' 'Scaffold_6__2_contigs__length_157086139' 'Scaffold_7__2_contigs__length_128225229' 'Scaffold_4__1_contigs__length_105873206' 'Scaffold_10__2_contigs__length_97064778' 'Scaffold_8__1_contigs__length_80766577' 'Scaffold_9__1_contigs__length_67344957'  'Scaffold_12__2_contigs__length_57092889''Scaffold_11__1_contigs__length_50805362')
 
 # Loop over each chromosome
-for j in 1 2 3 4 5 6 7 8 9 10 11 12; do
+for j in 0 1 2 3 4 5 6 7 8 9 10 11; do
     chrom_name=$(echo "${chroms[j]}" | awk 'BEGIN{FS="_"} {print $NF}')
     output_folder="$ldhat_dir/chr$((j+1))"
     cd "$output_folder"
