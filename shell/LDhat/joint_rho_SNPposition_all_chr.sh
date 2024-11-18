@@ -26,6 +26,6 @@ e=$(($d+1))
 
    for i in $( seq 1 $e )
    do     
-     paste --delimiters='\t' "/scratch/sg5533/LDhat/chr$(($j+1))/chr$(($j+1))_rho_pos/chr$(($j+1))_highcov_$i.res.txt" "/scratch/sg5533/LDhat/chr$(($j+1))/chr$(($j+1))_highcov_$i.ldhat.locs" > "chr$(($j+1))_highcov_$i.joint.txt"
+     paste --delimiters='\t' "/.../LDhat/chr$(($j+1))/chr$(($j+1))_rho_pos/chr$(($j+1))_highcov_$i.res.txt" "/.../LDhat/chr$(($j+1))/chr$(($j+1))_highcov_$i.ldhat.locs" > "chr$(($j+1))_highcov_$i.joint.txt"
    done    
 done     
