@@ -47,16 +47,16 @@ vcftools --gzvcf robeensis.vcf.gz \
         --recode
 
 ## check the number of sites in the VCF file
-cat robeensis_recode.vcf | grep -v '#' | wc -l
+cat robeensis_filtered.recode.vcf | grep -v '#' | wc -l
 #6700191
 
 ## compress the VCF file
-bgzip -c  robeensis_filtered.recode.vcf > robeensis_filtered_recode.vcf.gz 
+bgzip -c  robeensis_filtered.recode.vcf > robeensis_filtered.recode.vcf.gz 
 
 #####################################################################
 ### 2. Convert vcf to plink format
 #####################################################################
-./plink --vcf robeensis_filtered_recode.vcf.gz --make-bed --out  robeensis_filtered --allow-extra-chr --double-id --allow-no-sex
+./plink --vcf robeensis_filtered.recode.vcf.gz --make-bed --out  robeensis_filtered --allow-extra-chr --double-id --allow-no-sex
 
 ## check for relatedness in our data 
 ./plink --bfile robeensis_filtered --make-rel --allow-extra-chr --out robeensis_filtered_rel
