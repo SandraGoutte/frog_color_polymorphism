@@ -12,7 +12,7 @@
 ### vcftools
 ### plink
 
-### Data
+### Data:
 ## robeensis.vcf.gz contains low-coverage resequencing data for 100 P. robeensis individuals
 ## check the average coverage depth per sample and site quality in our VCF file
 vcftools --gzvcf robeensis.vcf.gz --depth --site-quality --out robeensis
