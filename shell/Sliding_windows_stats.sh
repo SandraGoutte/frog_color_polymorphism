@@ -47,11 +47,27 @@ source  activate /.../envs/pixy
 module load gencore
 module load gencore_variant_detection/1.0
 
-## filter our VCF: remove sites with > 60% missing, with depth > 15 , or with more that 2 alleles
-vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz --recode --recode-INFO-all --mac 3 --max-alleles 2 --max-missing 0.4 --max-meanDP 15 --out highcov_4sp_allsites_masmissing04_maxDP15
+## filter our VCF: remove sites with > 60% missing, with depth > 15 ,
+or with more that 2 alleles
+vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz \
+--recode \
+--recode-INFO-all \
+--mac 3 \
+--max-alleles 2 \
+--max-missing 0.4 \
+--max-meanDP 15 \
+--out highcov_4sp_allsites_masmissing04_maxDP15
 
 ## extract only chromosome 7
-vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz --chr Scaffold_4__1_contigs__length_105873206 --recode --recode-INFO-all --mac 3 --max-alleles 2 --max-missing 0.4 --max-meanDP 15 --out highcov_4sp_chr7_allsites_masmissing04_maxDP15
+vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz \
+--chr Scaffold_4__1_contigs__length_105873206 \
+--recode \
+--recode-INFO-all \
+--mac 3 \
+--max-alleles 2 \
+--max-missing 0.4 \
+--max-meanDP 15 \
+--out highcov_4sp_chr7_allsites_masmissing04_maxDP15
 
 ## bgzip the VCFs
 bgzip  highcov_4sp_allsites_masmissing04_maxDP15.recode.vcf
@@ -106,10 +122,28 @@ vk tajima 3,000 1,000 highcov10_genotype.vcf > TajimasD_robeensis_highcov.txt
 
 ## To get the Tajima's D for each color morph, lets subsample our VCF into green and brown ones
 ## green
-vcftools --gzvcf highcov_4sp_chr7_allsites_masmissing04_maxDP15.recode.vcf.gz --chr Scaffold_4__1_contigs__length_105873206 --recode --recode-INFO-all --min-alleles 2 --max-alleles 2 --max-missing 0.4 --max-meanDP 15 --keep green_robeensis_highcov.txt --out highcov_robeensis_chr7_green
+vcftools --gzvcf highcov_4sp_chr7_allsites_masmissing04_maxDP15.recode.vcf.gz \
+--chr Scaffold_4__1_contigs__length_105873206 \
+--recode \
+--recode-INFO-all \
+--min-alleles 2 \
+--max-alleles 2 \
+--max-missing 0.4 \
+--max-meanDP 15 \
+--keep green_robeensis_highcov.txt \
+--out highcov_robeensis_chr7_green
 
 ## brown
-vcftools --gzvcf highcov_4sp_chr7_allsites_masmissing04_maxDP15.recode.vcf.gz --chr Scaffold_4__1_contigs__length_105873206 --recode --recode-INFO-all --min-alleles 2 --max-alleles 2 --max-missing 0.4 --max-meanDP 15 --keep brown_robeensis_highcov.txt --out highcov_robeensis_chr7_brown
+vcftools --gzvcf highcov_4sp_chr7_allsites_masmissing04_maxDP15.recode.vcf.gz \
+--chr Scaffold_4__1_contigs__length_105873206 \
+--recode \
+--recode-INFO-all \
+--min-alleles 2 \
+--max-alleles 2 \
+--max-missing 0.4 \
+--max-meanDP 15 \
+--keep brown_robeensis_highcov.txt \
+--out highcov_robeensis_chr7_brown
 
 ## get Tajima's D on a 3kb sliding window (1kb overlap) on chromosome 7 (brown)
 vk tajima 3,000 1,000 highcov_robeensis_chr7_brown.recode.vcf > TajimasD_robeensis_highcov_chr7_brown.txt
