@@ -5,7 +5,7 @@
 ### 1. reads and filter color and phylogenetic data
 ### 2. fits and compares different Mk nodels of evolution for the green dorsal 
 ### coloration in anurans  
-### 3. reconstruct the ancestral states of the green coloration in anurans
+### 3. reconstructs the ancestral states of the green coloration in anurans
 ### 4. plots the number of changes between color states
 ### 5. plot the evolutionary time spent in each color state
 
