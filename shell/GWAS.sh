@@ -5,8 +5,8 @@
 #####################################################################
 ### What this script does: 
 ### 1. filters the VCF 
-### 2. convert the VCF into plink format
-### 3. run a GWAS on color trait using plink
+### 2. converts the VCF into plink format
+### 3. runs a GWAS on color trait using plink
 
 ### Dependencies:
 ### vcftools
