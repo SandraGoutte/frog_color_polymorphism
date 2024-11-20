@@ -5,7 +5,7 @@
 ### 1. fits can compare Mk models of evolution for habitat preferences 
 ### in anurans
 ### 2. reconstruct the ancestral states of habitat preferences in anurans
-### 3. Fit and compare models of habitat-green color joint-evolution 
+### 3. Fit and compare models of habitat-green color joint evolution 
 
 ################################################################################
 ### 1. Fit Mk models for habitat preferences
