@@ -5,7 +5,7 @@
 #####################################################################
 ### What this script does: 
 ### 1. Install Betascan
-### 2. Filter and subsample obtain 1 VCF file per chromosome
+### 2. Filter and obtain 1 VCF file per chromosome
 ### 3. Convert the VCF file into the BetaScan format
 ### 4. Get the mutation rate (theta) map for each chromosome
 ### 5. Run Betascan on the 12 chromososomes
@@ -33,7 +33,7 @@ conda install numpy
 wget https://github.com/ksiewert/BetaScan/blob/master/BetaScan.py
 
 #####################################################################
-### 2. Filter and subsample obtain 1 VCF file per chromosome
+### 2. Filter and obtain 1 VCF file per chromosome
 #####################################################################
 #!/bin/bash
 #SBATCH --nodes=1
