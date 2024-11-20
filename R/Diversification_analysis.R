@@ -2,8 +2,8 @@
 ###	       COLOR-DEPENDENT DIVERSIFICATION ANALYSIS IN ANURANS
 ################################################################################
 ### What this script does:
-### 1. load and manipulate color and phyloegentic data
-### 2. fit and compare models color state-dpeendent and independent models of
+### 1. load and manipulate color and phylogenetic data
+### 2. fit and compare models color state-dependent and independent models of
 ### diversification
 
 ################################################################################
