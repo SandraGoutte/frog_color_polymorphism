@@ -1,17 +1,17 @@
 ################################################################################
-###	RNAseq analysis P. robeensis
+###	         Differential expression of FoxD3 in P. robeensis
 ################################################################################
 ### What this script does:
 ### 1. reads RNAseq and phenotype data
-### 2. Compare FoxD3 expression levels between brown and green-genotyped  
+### 2. Compares FoxD3 expression levels between brown and green-genotyped  
 ### individuals across 4 development stages
-### 3. Compare FoxD3 expression levels between inside vs outside the stripe 
+### 3. Compares FoxD3 expression levels between inside vs outside the stripe 
 ### in the wide striped individuals 
 
 ### Data:
 ### countData.csv raw count data from RNAseq experiment
-### phenotypes2.csv comma delimited phenotype data with 
-### row names are samples, each column is a trait or sample descriptor
+### phenotypes2.csv comma delimited phenotype data with row names as
+### samples and each column as a trait or sample descriptor
 ### e.g. stage, color, stripe, zone
 
 ### load libraries
