@@ -2,8 +2,8 @@
 ###	      PLOT OUTPUT OF GWAS ON GREEN/BROWN P. ROBEENSIS
 ################################################################################
 ### What this script does: 
-### 1. import the output of GWAS conducted on green and brown P. robeensis 
-### 2. generate and save Manhattan plots
+### 1. imports the output of GWAS conducted on green and brown P. robeensis 
+### 2. generates and saves Manhattan plots
 
 # install the qqman package
 install.packages("qqman")
