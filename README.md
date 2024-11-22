@@ -33,6 +33,6 @@ The scripts in this directory use the following software and assume they are ins
 ## Evolution of green coloration in anurans
 This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset `TableS1.csv`. 
 
-### 1. Compare models of evolution and reocnstruct ancestral states of the green coloration in anurans using `Comparative_analysis_green.R`
+1. Compare models of evolution and reocnstruct ancestral states of the green coloration in anurans using `Comparative_analysis_green.R`
 
 
