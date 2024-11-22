@@ -26,7 +26,11 @@ The scripts in this directory use the following software and assume they are ins
 
 ## Data
 
+* Anura molecular phylogeny from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075)
+* 'TableS1.csv' - contains the color and habitat data for anurans
+* 
+
 ## Evolution of green coloration in anurans
-This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset  
+This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset 'TableS1.csv'. 
 
 
