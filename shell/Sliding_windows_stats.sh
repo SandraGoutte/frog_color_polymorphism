@@ -14,7 +14,7 @@
 ### vcf-kit
 
 ### Data:
-### erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz 
+### 4sp_highcov_all_sites.vcf.gz
 ### is a VCF file including our 4 polymoprhic Ptychadena species 
 ### and containing invariant sites (necessary for Pixy)
 
@@ -49,7 +49,7 @@ module load gencore_variant_detection/1.0
 
 ## filter our VCF: remove sites with > 60% missing, with depth > 15 ,
 or with more that 2 alleles
-vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz \
+vcftools --gzvcf 4sp_highcov_all_sites.vcf.gz \
 --recode \
 --recode-INFO-all \
 --mac 3 \
@@ -59,7 +59,7 @@ vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.v
 --out highcov_4sp_allsites_masmissing04_maxDP15
 
 ## extract only chromosome 7
-vcftools --gzvcf erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz \
+vcftools --gzvcf 4sp_highcov_all_sites.vcf.gz \
 --chr Scaffold_4__1_contigs__length_105873206 \
 --recode \
 --recode-INFO-all \
