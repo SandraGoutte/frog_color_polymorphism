@@ -2,10 +2,10 @@
 ###     JOINT EVOLUTION OF GREEN COLOR AND HABITAT PREFERENCE IN ANURANS
 ################################################################################
 ### What this script does:
-### 1. fits can compare Mk models of evolution for habitat preferences 
+### 1. fits and compare Mk models of evolution for habitat preferences 
 ### in anurans
-### 2. reconstruct the ancestral states of habitat preferences in anurans
-### 3. Fit and compare models of habitat-green color joint evolution 
+### 2. reconstructs the ancestral states of habitat preferences in anurans
+### 3. fits and compare models of habitat-green color joint evolution 
 
 ################################################################################
 ### 1. Fit Mk models for habitat preferences
