@@ -20,7 +20,7 @@
 ### phyml_sliding_windows.py from https://github.com/simonhmartin/genomics_general/
 
 ### Data:
-### ptychadenas4sp_filtered.recode.vcf is a VCF file including 
+### ptychadena_4sp.vcf is a VCF file including 
 ### "high-coverage" sequencing data of our 4 polymorphic species: 
 ### P. nana, P. erlangeri, P. levenorum, P. robeensis
 
@@ -38,7 +38,7 @@ module load gencore
 module load gencore_variant_detection
 
 ## run Beagle
-java -Xmx300g -jar beagle.22Jul22.46e.jar gt=ptychadenas4sp_filtered.recode.vcf out=phased_ptychadenas4sp.vcf.gz impute=true nthreads=20 window=40 overlap=2 gp=false
+java -Xmx300g -jar beagle.22Jul22.46e.jar gt=ptychadena_4sp.vcf out=phased_ptychadenas4sp.vcf.gz impute=true nthreads=20 window=40 overlap=2 gp=false
 
 #####################################################################
 ### 2. Rename samples in VCF
