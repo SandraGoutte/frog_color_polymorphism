@@ -27,9 +27,9 @@ The scripts in this directory use the following software and assume they are ins
 
 ## Data
 
-* Anura molecular phylogeny from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075)
+* Anurans' molecular phylogeny from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075)
 * `TableS1.csv` - contains the color and habitat data for anurans
-* 
+* [Robe's grass frog (_Ptychandena robeensis_) reference genome assembly](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_036250615.1/) 
 
 ## Evolution of green coloration in anurans
 This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset `TableS1.csv`. 
@@ -42,4 +42,4 @@ This analysis uses the same datasets as the [Evolution of green coloration in an
 
 `Diversification_analysis.R` This script fits and compare color state-dependent and independent models of diversification.
 
-
+## Genome-wide Association study of dorsal coloration in (_Ptychadena robeensis_)
