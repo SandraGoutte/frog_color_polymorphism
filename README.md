@@ -7,6 +7,8 @@ This repository contains scripts to conduct analyses on the evolution and genomi
 * [Data](#data)
 * [Evolution of green coloration in anurans](#evolution-of-green-coloration-in-anurans)
 * [Diversification analysis](#diversification-analysis)
+* [Genome-wide Association study of dorsal coloration in _Ptychadena robeensis_](#genome-wide-association-study-of-dorsal-coloration-in-_Ptychadena-robeensis_)
+* [FoxD3 expression analysis](#foxD3-expression-analysis)
 
 
 
@@ -29,7 +31,12 @@ The scripts in this directory use the following software and assume they are ins
 
 * Anurans' molecular phylogeny from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075)
 * `TableS1.csv` - contains the color and habitat data for anurans
-* [Robe's grass frog (_Ptychandena robeensis_) reference genome assembly](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_036250615.1/) 
+* [Robe's grass frog (_Ptychadena robeensis_) reference genome assembly](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_036250615.1/)
+* `robeensis.vcf.gz` - contains low-coverage resequencing data for 100 _P. robeensis_ individuals
+* `phenotype_robeensis.txt` - contains color data (green or brown) for the 100 _P. robeensis_ sequenced individuals
+* `countData.csv` - contains raw count data from RNAseq experiment
+* `phenotypes2.csv` - contains information on the color, developmental stage, vertebral stripe width and zone (inside or outside the stripe) for each sample included in the RNAseq experiment
+* 
 
 ## Evolution of green coloration in anurans
 This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset `TableS1.csv`. 
@@ -42,4 +49,11 @@ This analysis uses the same datasets as the [Evolution of green coloration in an
 
 `Diversification_analysis.R` This script fits and compare color state-dependent and independent models of diversification.
 
-## Genome-wide Association study of dorsal coloration in (_Ptychadena robeensis_)
+## Genome-wide Association study of dorsal coloration in _Ptychadena robeensis_
+
+1. `GWAS.sh` This script filters the VCF file `robeensis.vcf.gz` and runs a genome-wide association study on _Ptychadena robeensis_ 100 individuals using the `phenotype_robeensis.txt` phenotype file.
+2. `Plot_GWAS.R` This script imports the output of the GWAS and generates a Manhattan plot. 
+
+## FoxD3 expression analysis
+
+`Foxd3_expression_analysis` This script analyses the raw counts data from the RNAseq experiment and `phenotype2.csv` dataset. The  script normalizes the data and compares FoxD3 expression levels between green and brown frog skin across developmental stages, as well as between outside and inside the vertebral stripe in wide-striped individuals. 
