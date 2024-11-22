@@ -6,6 +6,7 @@ This repository contains scripts to conduct analyses on the evolution and genomi
 * [Dependencies](#dependencies)
 * [Data](#data)
 * [Evolution of green coloration in anurans](#evolution-of-green-coloration-in-anurans)
+* [Diversification analysis](#diversification-analysis)
 
 
 
@@ -33,6 +34,12 @@ The scripts in this directory use the following software and assume they are ins
 ## Evolution of green coloration in anurans
 This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset `TableS1.csv`. 
 
-1. Compare models of evolution and reocnstruct ancestral states of the green coloration in anurans using `Comparative_analysis_green.R`
+1. `Comparative_analysis_green.R` This script fits and compares Mk models of evolution of green coloration in anurans, reconstructs ancestral states, and plots the number of changes between color states and the evolutionary time spent in each state.
+2. `Comparative_analysis_habitat_green.R` This script fits and compare Mk models of evolution for habitat preferences in anurans, reconstructs the ancestral states of habitat preferences, and fits and compares models of habitat-green color joint evolution.
+
+## Diversification analysis
+This analysis uses the same datasets as the [Evolution of green coloration in anurans](#evolution-of-green-coloration-in-anurans). 
+
+`Diversification_analysis.R` This script fits and compare color state-dependent and independent models of diversification.
 
 
