@@ -9,6 +9,7 @@ This repository contains scripts to conduct analyses on the evolution and genomi
 * [Diversification analysis](#diversification-analysis)
 * [Genome-wide Association study of dorsal coloration in _Ptychadena robeensis_](#genome-wide-association-study-of-dorsal-coloration-in-_Ptychadena-robeensis_)
 * [FoxD3 expression analysis](#foxD3-expression-analysis)
+* [Recombination rate mapping](#recombination-rate-mapping)
 
 
 
@@ -21,6 +22,7 @@ The scripts in this directory use the following software and assume they are ins
 * [beagle](https://faculty.washington.edu/browning/beagle/beagle.html)
 * [bgzip](http://www.htslib.org/)
 * [glactools](https://github.com/grenaud/glactools)
+* [LDhat]
 * [pixy](https://pixy.readthedocs.io/en/latest/)
 * [plink](https://www.cog-genomics.org/plink/)
 * [R](https://cran.r-project.org/)
@@ -64,8 +66,17 @@ This analysis uses the same datasets as the [Evolution of green coloration in an
 
 ## Selection analysis
 
-This analysis is run on `highcov10_genotype.vcf` and `erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz`
+This analysis is run on `highcov10_genotype.vcf` and `erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz`.
 
-1. `Sliding_windows_stats` calculates Pi, Dxy, and Fst for 4 _Ptychadena_ species that share the same green/brown color polymorphism, and Tajima's D for _P. robeensis_ on sliding windows along the genome
-2. `Run_Betascan.sh` runs Betascan on the _P. robeensis_
-3. `Plot_stats_sliding_windows` loads all statistics computed on sliding windows and creates a mutli-panel plot for _P. robeensis_ and for the 3 other polymorphic _Ptychadena_ species
+1. `Create_bed_file_sliding_window.R` creates a BED file with coordinates for a custom 3kb sliding window with 1kb overlap between adjacent windows to use in Pixy.
+2. `Sliding_windows_stats` calculates Pi, Dxy, and Fst for 4 _Ptychadena_ species that share the same green/brown color polymorphism, and Tajima's D for _P. robeensis_ on sliding windows along the genome.
+3. `Run_Betascan.sh` runs Betascan on the _P. robeensis_.
+4. `plot_Betascores` imports the ouput from Betascan, calculates the first percentile betascore value across the genome and plots betascores.
+5. `Plot_stats_sliding_windows` loads all statistics computed on sliding windows and creates a mutli-panel plot for _P. robeensis_ and for the 3 other polymorphic _Ptychadena_ species.
+
+## Recombination rate mapping
+
+This analysis is run on `highcov10_genotype.vcf`.
+
+1. `Recombination_rate.sh` runs LDhat on the _P. robeensis_ genome and outputs a recombination map file per chromosome. This scipt uses `get_vcf_per_chr.sh`, `split_vcf_all_chr.sh`, `run_interval_all_chr.sh`, `joint_rho_SNPposition_all_chr.sh`, `remove_2_first_lines.sh`, `trim_result.sh`, `cat_all_results_one_file.sh`.
+2. PLOT REMCOMBINATION MAP MIssiNG
