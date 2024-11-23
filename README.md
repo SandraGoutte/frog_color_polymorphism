@@ -22,13 +22,15 @@ The scripts in this directory use the following software and assume they are ins
 * [beagle](https://faculty.washington.edu/browning/beagle/beagle.html)
 * [bgzip](http://www.htslib.org/)
 * [glactools](https://github.com/grenaud/glactools)
-* [LDhat]
+* [LDhat](https://github.com/auton1/LDhat)
 * [pixy](https://pixy.readthedocs.io/en/latest/)
 * [plink](https://www.cog-genomics.org/plink/)
 * [R](https://cran.r-project.org/)
+* [raxml-ng](https://github.com/amkozlov/raxml-ng)
 * [tabix](http://www.htslib.org/)
 * [twisst](https://github.com/simonhmartin/twisst)
-* [vcf-kit]
+* [vcf2fasta](https://github.com/santiagosnchez/vcf2fasta)
+* [vcf-kit](https://github.com/AndersenLab/VCF-kit)
 * [vcftools](https://vcftools.github.io/index.html)
 
 ## Data
@@ -42,7 +44,9 @@ The scripts in this directory use the following software and assume they are ins
 * `phenotypes2.csv` - contains information on the color, developmental stage, vertebral stripe width and zone (inside or outside the stripe) for each sample included in the RNAseq experiment
 * `highcov10_genotype.vcf` - contains higher-coverage whole-genome sequencing data for 10 
 _P. robeensis_ individuals
-* `erlangeri_nana_levenorum_robeensis_highcov_genotype_all_sites.vcf.gz`  - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species
+* `4sp_highcov_all_sites.vcf.gz` - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species, inclduing invariant sites (necessary for Pixy)
+* `highcov_12sp.vcf.gz` - contains higher-coverage whole-genome sequencing data for all 12 species of the Ethiopian Highlands _Ptychadena_ radiation
+* `ptychadena_4sp.vcf` - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species (no invariant sites)
 
 
 ## Evolution of green coloration in anurans
@@ -71,19 +75,27 @@ This analysis is run on `highcov10_genotype.vcf` and `erlangeri_nana_levenorum_r
 
 1. `Create_bed_file_sliding_window.R` creates a BED file with coordinates for a custom 3kb sliding window with 1kb overlap between adjacent windows to use in Pixy.
 2. `Sliding_windows_stats.sh` calculates Pi, Dxy, and Fst for 4 _Ptychadena_ species that share the same green/brown color polymorphism, and Tajima's D for _P. robeensis_ on sliding windows along the genome.
-3. `Run_Betascan.sh` runs Betascan on the _P. robeensis_.
-4. `plot_Betascores.R` imports the ouput from Betascan, calculates the first percentile betascore value across the genome and plots betascores.
-5. `Plot_stats_sliding_windows.R` loads all statistics computed on sliding windows and creates a mutli-panel plot for _P. robeensis_ and for the 3 other polymorphic _Ptychadena_ species.
+3. `robeensis_thetamap.R` Calculates a mutation map for _P. robeensis_ to be used in Betascan.
+4. `Run_Betascan.sh` runs Betascan on the _P. robeensis_ genome.
+5. `plot_Betascores.R` imports the ouput from Betascan, calculates the first percentile of betascore values across the genome, and plots betascores.
+6. `Plot_stats_sliding_windows.R` loads all statistics computed on sliding windows and creates a mutli-panel plot for _P. robeensis_ and for the 3 other polymorphic _Ptychadena_ species.
 
 ## Recombination rate mapping
 
 This analysis is run on `highcov10_genotype.vcf`.
 
 1. `Recombination_rate.sh` runs LDhat on the _P. robeensis_ genome and outputs a recombination map file per chromosome. This scipt uses `get_vcf_per_chr.sh`, `split_vcf_all_chr.sh`, `run_interval_all_chr.sh`, `joint_rho_SNPposition_all_chr.sh`, `remove_2_first_lines.sh`, `trim_result.sh`, `cat_all_results_one_file.sh`.
-2. PLOT REMCOMBINATION MAP MIssiNG
+2. `plot_recombination_map.R` plots the recombination map in the region of interest.
 
 ## TWISST analysis
 
-This analysis uses `ptychadenas4sp_filtered.recode.vcf`.
+This analysis uses `ptychadena_4sp.vcf`.
 
-1. `Run_TWISST_on_sliding_windows.sh` phases the input VCF and runs TWISST on the 4 polymrophic _Ptychadena_ species on 50 SNPs windows. In order to make the windows artificially overlap (with 1 SNP step), the script creates 
+1. `Run_TWISST_on_sliding_windows.sh` phases the input VCF and runs TWISST on the 4 polymrophic _Ptychadena_ species (including green and brown individuals for each species). In order to make the windows artificially overlap (with 1 SNP step), the script creates 50 versions of the VCF starting at 1 SNP intervall from each other and TWISST is run on 50 SNPs non-overlapping windows on each VCF, results are combined at the plotting step.
+2. `Plot_TWISST_output.R` imports the output from TWISST, identifies tree topologies in which green individuals of all 4 species group together, sums the weights of green-grouping topologies and plot the result.
+
+## Haplotype tree reconstruction
+
+This analysis uses `highcov_12sp.vcf.gz`.
+
+`Reconstruct_haplotype_tree` phases the VCF including 12 Ethiopian Highlands _Ptychadena_ species, selects the region of interest and splits the haplotypes before reconstructing a phylogenetic tree of the haplotypes.
