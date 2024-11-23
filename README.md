@@ -5,7 +5,7 @@ This repository contains scripts to conduct analyses on the evolution and genomi
 ## Content
 * [Dependencies](#dependencies)
 * [Data used in this study](#data-used-in-this-study)
-* [Evolution of green coloration in anurans](#evolution-of-green-coloration-in-anurans)
+* [Evolution of the green coloration in anurans](#evolution-of-the-green-coloration-in-anurans)
 * [Diversification analysis](#diversification-analysis)
 * [Genome-wide Association Study of dorsal coloration in _Ptychadena robeensis_](#genome-wide-association-study-of-dorsal-coloration-in-_Ptychadena-robeensis_)
 * [FoxD3 expression analysis](#foxD3-expression-analysis)
@@ -52,10 +52,10 @@ _P. robeensis_ individuals
 * `ptychadena_4sp.vcf` - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species (no invariant sites)
 
 
-## Evolution of green coloration in anurans
+## Evolution of the green coloration in anurans
 This analysis uses the molecular phylogeny for anurans from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075) and the dataset `TableS1.csv`. 
 
-1. `Comparative_analysis_green.R` fits and compares Mk models of evolution of green coloration in anurans, reconstructs ancestral states, and plots the number of changes between color states and the evolutionary time spent in each state.
+1. `Comparative_analysis_green.R` fits and compares Mk models of evolution of the green coloration in anurans, reconstructs ancestral states, and plots the number of changes between color states and the evolutionary time spent in each state.
 2. `Comparative_analysis_habitat_green.R` fits and compare Mk models of evolution for habitat preferences in anurans, reconstructs the ancestral states of habitat preferences, and fits and compares models of habitat-green color joint evolution.
 
 ## Diversification analysis
