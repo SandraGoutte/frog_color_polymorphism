@@ -1,6 +1,6 @@
 # Frog color polymorphism
 
-This repository contains scripts to conduct analyses on the evolution and genomics of the green/brown color polymorphism in frogs, as described in Goutte and Boissinot (in review). Below is a brief description of these scripts and how to use them. Shell and R scripts are in the [shell](#shell) and `R` directories, respectively.
+This repository contains scripts to conduct analyses on the evolution and genomics of the green/brown color polymorphism in frogs, as described in Goutte and Boissinot (in review). Below is a brief description of these scripts and how to use them. Shell and R scripts are in the [shell](https://github.com/SandraGoutte/frog_color_polymorphism/tree/main/shell) and `R` directories, respectively.
 
 ## Content
 * [Dependencies](#dependencies)
