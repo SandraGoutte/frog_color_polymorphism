@@ -7,9 +7,12 @@ This repository contains scripts to conduct analyses on the evolution and genomi
 * [Data](#data)
 * [Evolution of green coloration in anurans](#evolution-of-green-coloration-in-anurans)
 * [Diversification analysis](#diversification-analysis)
-* [Genome-wide Association study of dorsal coloration in _Ptychadena robeensis_](#genome-wide-association-study-of-dorsal-coloration-in-_Ptychadena-robeensis_)
+* [Genome-wide Association Study of dorsal coloration in _Ptychadena robeensis_](#genome-wide-association-study-of-dorsal-coloration-in-_Ptychadena-robeensis_)
 * [FoxD3 expression analysis](#foxD3-expression-analysis)
+* [Selection analysis](#selection-analysis)
 * [Recombination rate mapping](#recombination-rate-mapping)
+* [TWISST analysis](#twisst-analysis)
+* [Haplotype tree reconstruction](#haplotype-tree-reconstruction)
 
 
 
@@ -33,7 +36,7 @@ The scripts in this directory use the following software and assume they are ins
 * [vcf-kit](https://github.com/AndersenLab/VCF-kit)
 * [vcftools](https://vcftools.github.io/index.html)
 
-## Data
+## Data used in this study
 
 * Anurans' molecular phylogeny from [Portik et al. 2023](https://www.sciencedirect.com/science/article/pii/S1055790323002075)
 * `TableS1.csv` - contains the color and habitat data for anurans
@@ -60,7 +63,7 @@ This analysis uses the same datasets as the [Evolution of green coloration in an
 
 `Diversification_analysis.R` fits and compare color state-dependent and independent models of diversification.
 
-## Genome-wide Association study of dorsal coloration in _Ptychadena robeensis_
+## Genome-wide Association Study of dorsal coloration in _Ptychadena robeensis_
 
 1. `GWAS.sh` filters the VCF file `robeensis.vcf.gz` and runs a genome-wide association study on _Ptychadena robeensis_ 100 individuals using the `phenotype_robeensis.txt` phenotype file.
 2. `Plot_GWAS.R` imports the output of the GWAS and generates a Manhattan plot. 
