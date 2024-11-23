@@ -1,6 +1,6 @@
 # Frog color polymorphism
 
-This repository contains scripts to conduct analyses on the evolution and genomics of the green/brown color polymorphism in frogs, as described in Goutte and Boissinot (in review). Below is a brief description of these scripts and how to use them.
+This repository contains scripts to conduct analyses on the evolution and genomics of the green/brown color polymorphism in frogs, as described in Goutte and Boissinot (in review). Below is a brief description of these scripts and how to use them. Shell and R scripts are in the [shell](#shell) and `R` directories, respectively.
 
 ## Content
 * [Dependencies](#dependencies)
@@ -105,4 +105,4 @@ This analysis uses `ptychadena_4sp.vcf`.
 
 This analysis uses `highcov_12sp.vcf.gz`.
 
-`Reconstruct_haplotype_tree` phases the VCF including 12 Ethiopian Highlands _Ptychadena_ species, selects the region of interest and splits the haplotypes before reconstructing a phylogenetic tree of the haplotypes.
+`Reconstruct_haplotype_tree.sh` phases the VCF including 12 Ethiopian Highlands _Ptychadena_ species, selects the region of interest and splits the haplotypes before reconstructing a phylogenetic tree of the haplotypes.
