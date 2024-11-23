@@ -4,7 +4,7 @@ This repository contains scripts to conduct analyses on the evolution and genomi
 
 ## Content
 * [Dependencies](#dependencies)
-* [Data](#data)
+* [Data used in this study](#data)
 * [Evolution of green coloration in anurans](#evolution-of-green-coloration-in-anurans)
 * [Diversification analysis](#diversification-analysis)
 * [Genome-wide Association Study of dorsal coloration in _Ptychadena robeensis_](#genome-wide-association-study-of-dorsal-coloration-in-_Ptychadena-robeensis_)
