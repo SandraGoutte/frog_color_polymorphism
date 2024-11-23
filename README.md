@@ -1,4 +1,5 @@
 # Frog color polymorphism
+![Figure_asbtract](https://github.com/user-attachments/assets/9429a3e5-49e9-4011-8d05-ca7941f2203c)
 
 This repository contains scripts to conduct analyses on the evolution and genomics of the green/brown color polymorphism in frogs, as described in Goutte and Boissinot (in review). Below is a brief description of these scripts and how to use them. Shell and R scripts can be found in the [shell](https://github.com/SandraGoutte/frog_color_polymorphism/tree/main/shell) and [R](https://github.com/SandraGoutte/frog_color_polymorphism/tree/main/R) directories, respectively.
 
