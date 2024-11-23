@@ -17,14 +17,14 @@
 ### raxml-ng (install at step 5)
 
 ### Data:
-### highcov_12sp_genotype.recode.vcf.gz is a VCF including "high-coverage" 
+### highcov_12sp.vcf.gz is a VCF including "high-coverage" 
 ### sequencing data from all 12 species of the Ethiopian Highlands Ptychadena
 ### radiation
 
 #####################################################################
 ### 1. Phase VCF using Beagle
 #####################################################################
-java -Xmx300g -jar beagle.22Jul22.46e.jar gt=highcov_12sp_genotype.recode.vcf.gz out=phased_ptychadenas12sp.vcf.gz impute=true nthreads=20 window=40 overlap=2 gp=false
+java -Xmx300g -jar beagle.22Jul22.46e.jar gt=highcov_12sp.vcf.gz out=phased_ptychadenas12sp.vcf.gz impute=true nthreads=20 window=40 overlap=2 gp=false
 
 #####################################################################
 ### 2. Get a VCF file with only the region of interest
