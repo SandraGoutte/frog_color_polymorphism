@@ -47,7 +47,7 @@ The scripts in this directory use the following software and assume they are ins
 * `phenotypes2.csv` - contains information on the color, developmental stage, vertebral stripe width and zone (inside or outside the stripe) for each sample included in the RNAseq experiment
 * `highcov10_genotype.vcf` - contains higher-coverage whole-genome sequencing data for 10 
 _P. robeensis_ individuals
-* `4sp_highcov_all_sites.vcf.gz` - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species, inclduing invariant sites (necessary for Pixy)
+* `4sp_highcov_all_sites.vcf.gz` - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species, including invariant sites (necessary for Pixy)
 * `highcov_12sp.vcf.gz` - contains higher-coverage whole-genome sequencing data for all 12 species of the Ethiopian Highlands _Ptychadena_ radiation
 * `ptychadena_4sp.vcf` - contains higher-coverage whole-genome sequencing data for 4 polymorphic _Ptychadena_ species (no invariant sites)
 
